@@ -7,8 +7,8 @@
 namespace al {
 
 class ActorPoseKeeperBase {
-protected:  // protected so it's visible to all sub-classes (TFSV, TFGSV, ...)
-    sead::Vector3f mTrans{0, 0, 0};
+protected: // protected so it's visible to all sub-classes (TFSV, TFGSV, ...)
+    sead::Vector3f mTrans { 0, 0, 0 };
 
     static sead::Vector3f sDefaultVelocity;
 
@@ -40,10 +40,10 @@ public:
 };
 
 class ActorPoseKeeperTFSV : public ActorPoseKeeperBase {
-protected:  // protected so it's visible to all sub-classes (TFGSV, TFUSV)
+protected: // protected so it's visible to all sub-classes (TFGSV, TFUSV)
     sead::Vector3f mFront = sead::Vector3f::ez;
-    sead::Vector3f mScale{1.0, 1.0, 1.0};
-    sead::Vector3f mVelocity{0.0, 0.0, 0.0};
+    sead::Vector3f mScale { 1.0, 1.0, 1.0 };
+    sead::Vector3f mVelocity { 0.0, 0.0, 0.0 };
 
 public:
     ActorPoseKeeperTFSV();
@@ -63,7 +63,7 @@ public:
 
 class ActorPoseKeeperTFGSV : public ActorPoseKeeperTFSV {
 private:
-    sead::Vector3f mGravity{0.0, -1.0, 0.0};
+    sead::Vector3f mGravity { 0.0, -1.0, 0.0 };
 
 public:
     ActorPoseKeeperTFGSV();
@@ -97,8 +97,8 @@ public:
 class ActorPoseKeeperTQSV : public ActorPoseKeeperBase {
 private:
     sead::Quatf mQuat = sead::Quatf::unit;
-    sead::Vector3f mScale{1.0, 1.0, 1.0};
-    sead::Vector3f mVelocity{0.0, 0.0, 0.0};
+    sead::Vector3f mScale { 1.0, 1.0, 1.0 };
+    sead::Vector3f mVelocity { 0.0, 0.0, 0.0 };
 
 public:
     ActorPoseKeeperTQSV();
@@ -119,9 +119,9 @@ public:
 class ActorPoseKeeperTQGSV : public ActorPoseKeeperBase {
 private:
     sead::Quatf mQuat = sead::Quatf::unit;
-    sead::Vector3f mGravity{0.0, -1.0, 0.0};
-    sead::Vector3f mScale{1.0, 1.0, 1.0};
-    sead::Vector3f mVelocity{0.0, 0.0, 0.0};
+    sead::Vector3f mGravity { 0.0, -1.0, 0.0 };
+    sead::Vector3f mScale { 1.0, 1.0, 1.0 };
+    sead::Vector3f mVelocity { 0.0, 0.0, 0.0 };
 
 public:
     ActorPoseKeeperTQGSV();
@@ -144,9 +144,9 @@ public:
 class ActorPoseKeeperTQGMSV : public ActorPoseKeeperBase {
 private:
     sead::Quatf mQuat = sead::Quatf::unit;
-    sead::Vector3f mGravity{0.0, -1.0, 0.0};
-    sead::Vector3f mScale{1.0, 1.0, 1.0};
-    sead::Vector3f mVelocity{0.0, 0.0, 0.0};
+    sead::Vector3f mGravity { 0.0, -1.0, 0.0 };
+    sead::Vector3f mScale { 1.0, 1.0, 1.0 };
+    sead::Vector3f mVelocity { 0.0, 0.0, 0.0 };
     sead::Matrix34f mMtx = sead::Matrix34f::ident;
 
 public:
@@ -171,9 +171,9 @@ public:
 
 class ActorPoseKeeperTRSV : public ActorPoseKeeperBase {
 private:
-    sead::Vector3f mRotate{0.0, 0.0, 0.0};
-    sead::Vector3f mScale{1.0, 1.0, 1.0};
-    sead::Vector3f mVelocity{0.0, 0.0, 0.0};
+    sead::Vector3f mRotate { 0.0, 0.0, 0.0 };
+    sead::Vector3f mScale { 1.0, 1.0, 1.0 };
+    sead::Vector3f mVelocity { 0.0, 0.0, 0.0 };
 
 public:
     ActorPoseKeeperTRSV();
@@ -193,10 +193,10 @@ public:
 
 class ActorPoseKeeperTRMSV : public ActorPoseKeeperBase {
 private:
-    sead::Vector3f mRotate{0.0, 0.0, 0.0};
-    sead::Vector3f mScale{1.0, 1.0, 1.0};
-    sead::Vector3f mVelocity{0.0, 0.0, 0.0};
-    sead::Matrix34f mMtx;  // manually set in the ctor
+    sead::Vector3f mRotate { 0.0, 0.0, 0.0 };
+    sead::Vector3f mScale { 1.0, 1.0, 1.0 };
+    sead::Vector3f mVelocity { 0.0, 0.0, 0.0 };
+    sead::Matrix34f mMtx; // manually set in the ctor
 public:
     ActorPoseKeeperTRMSV();
 
@@ -217,10 +217,10 @@ public:
 
 class ActorPoseKeeperTRGMSV : public ActorPoseKeeperBase {
 private:
-    sead::Vector3f mRotate{0.0, 0.0, 0.0};
-    sead::Vector3f mGravity{0.0, -1.0, 0.0};
-    sead::Vector3f mScale{1.0, 1.0, 1.0};
-    sead::Vector3f mVelocity{0.0, 0.0, 0.0};
+    sead::Vector3f mRotate { 0.0, 0.0, 0.0 };
+    sead::Vector3f mGravity { 0.0, -1.0, 0.0 };
+    sead::Vector3f mScale { 1.0, 1.0, 1.0 };
+    sead::Vector3f mVelocity { 0.0, 0.0, 0.0 };
     sead::Matrix34f mMtx;
 
 public:
@@ -253,9 +253,9 @@ void makeMtxSRT(sead::Matrix34f*, const al::LiveActor* actor);
 void makeMtxRT(sead::Matrix34f*, const al::LiveActor* actor);
 void makeMtxR(sead::Matrix34f*, const al::LiveActor* actor);
 void calcAnimFrontGravityPos(al::LiveActor* actor, const sead::Vector3f&);
-sead::Vector3f getGravity(const al::LiveActor* actor);
-sead::Vector3f getTrans(const al::LiveActor* actor);
-sead::Vector3f getScale(const al::LiveActor* actor);
+const sead::Vector3f& getGravity(const al::LiveActor* actor);
+const sead::Vector3f& getTrans(const al::LiveActor* actor);
+const sead::Vector3f& getScale(const al::LiveActor* actor);
 void copyPose(al::LiveActor* actor, const al::LiveActor* target);
 void updatePoseTrans(al::LiveActor* actor, const sead::Vector3f&);
 void updatePoseRotate(al::LiveActor* actor, const sead::Vector3f&);
@@ -282,13 +282,13 @@ void setTransX(al::LiveActor* actor, f32);
 void setTransY(al::LiveActor* actor, f32);
 void setTransZ(al::LiveActor* actor, f32);
 const sead::Vector3f& getRotate(const al::LiveActor* actor);
-void getRotatePtr(al::LiveActor* actor);
+sead::Vector3f* getRotatePtr(al::LiveActor* actor);
 void setRotate(al::LiveActor* actor, f32, f32, f32);
 void setRotateX(al::LiveActor* actor, f32);
 void setRotateY(al::LiveActor* actor, f32);
 void setRotateZ(al::LiveActor* actor, f32);
-void getScalePtr(al::LiveActor* actor);
-bool tryGetScalePtr(al::LiveActor* actor);
+sead::Vector3f* getScalePtr(al::LiveActor* actor);
+sead::Vector3f* tryGetScalePtr(al::LiveActor* actor);
 void getScaleX(const al::LiveActor* actor);
 void getScaleY(const al::LiveActor* actor);
 void getScaleZ(const al::LiveActor* actor);
@@ -310,17 +310,17 @@ bool isUpTarget(const al::LiveActor* actor, const sead::Vector3f&);
 bool isUpDir(const al::LiveActor* actor, const sead::Vector3f&);
 bool isDownTarget(const al::LiveActor* actor, const sead::Vector3f&);
 bool isDownDir(const al::LiveActor* actor, const sead::Vector3f&);
-void getQuat(const al::LiveActor* actor);
-void getQuatPtr(al::LiveActor* actor);
-bool tryGetQuatPtr(al::LiveActor* actor);
+const sead::Quatf& getQuat(const al::LiveActor* actor);
+sead::Quatf* getQuatPtr(al::LiveActor* actor);
+sead::Quatf* tryGetQuatPtr(al::LiveActor* actor);
 void setQuat(al::LiveActor* actor, const sead::Quatf&);
-void getGravityPtr(const al::LiveActor* actor);
+sead::Vector3f* getGravityPtr(const al::LiveActor* actor);
 void setGravity(const al::LiveActor* actor, const sead::Vector3f&);
 sead::Vector3f getFront(const al::LiveActor* actor);
 sead::Vector3f* getFrontPtr(al::LiveActor* actor);
 void setFront(al::LiveActor* actor, const sead::Vector3f&);
-void getUp(const al::LiveActor* actor);
-void getUpPtr(al::LiveActor* actor);
+const sead::Vector3f& getUp(const al::LiveActor* actor);
+sead::Vector3f* getUpPtr(al::LiveActor* actor);
 void setUp(al::LiveActor* actor, const sead::Vector3f&);
 void multVecPoseNoTrans(sead::Vector3f*, const al::LiveActor* actor, const sead::Vector3f&);
 void multVecPose(sead::Vector3f*, const al::LiveActor* actor, const sead::Vector3f&);
@@ -330,7 +330,7 @@ void multVecInvQuat(sead::Vector3f*, const al::LiveActor* actor, const sead::Vec
 void multMtxInvPose(sead::Matrix34f*, const al::LiveActor* actor, const sead::Matrix34f&);
 void calcTransLocalOffset(sead::Vector3f*, const al::LiveActor* actor, const sead::Vector3f&);
 
-}  // namespace al
+} // namespace al
 
 class alActorPoseFunction {
     void calcBaseMtx(sead::Matrix34f* mtx, const al::LiveActor* actor);
